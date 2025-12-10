@@ -130,9 +130,12 @@ The application will run at http://localhost:3000
 
 **Team Size**: 1 member (Individual Project)
 
-**Note**: This project was started late, and the proposal submission deadline (October 16th, 11:59PM) was missed. However, the project will continue with the remaining deliverables:
+**Note**: This project was started late, and the following deadlines were missed:
 
-- **Functional Prototypes and Heuristic Evaluation** - Due: November 11th (in class)
+- **Proposal Submission** - Due: October 16th, 11:59PM ❌ (Missed)
+- **Functional Prototypes and Heuristic Evaluation** - Due: November 11th (in class) ❌ (Missed)
+
+**Remaining Deliverables**:
 - **Final Submission** - Due: December 9th, 11:59PM CT
 
 ## License
