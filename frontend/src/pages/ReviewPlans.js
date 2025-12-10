@@ -164,9 +164,13 @@ const ReviewPlans = () => {
             {reviewPlans.map((plan) => (
               <div key={plan._id} className="review-plan-card">
                 <div className="plan-header">
-                  <div>
-                    <h3>{new Date(plan.review_date).toLocaleDateString()}</h3>
-                    <p>{plan.note_ids.length} notes</p>
+                  <div className="plan-header-left">
+                    <h3>{new Date(plan.review_date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}</h3>
+                    <p>{plan.note_ids.length} {plan.note_ids.length === 1 ? 'note' : 'notes'}</p>
                   </div>
                   <span className={`status-badge ${plan.status}`}>
                     {plan.status === 'pending' ? 'Pending' : 

@@ -51,6 +51,12 @@
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review-plan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .plan-header {
@@ -62,9 +68,15 @@
   border-bottom: 1px solid #f0f0f0;
 }
 
+.plan-header-left {
+  flex: 1;
+}
+
 .plan-header h3 {
   margin: 0 0 0.5rem 0;
   color: #333;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .plan-header p {
@@ -78,11 +90,13 @@
 }
 
 .plan-note-item {
-  padding: 0.5rem;
-  background: #f5f5f5;
+  padding: 0.6rem 0.8rem;
+  background: #f8f9fa;
   border-radius: 5px;
   margin-bottom: 0.5rem;
-  color: #666;
+  color: #495057;
+  font-size: 0.9rem;
+  border-left: 3px solid #667eea;
 }
 
 .plan-actions {
@@ -90,16 +104,26 @@
   gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #f0f0f0;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .complete-button,
 .delete-button {
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 5px;
   font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s;
+  min-width: 120px;
+}
+
+.complete-button:hover,
+.delete-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .complete-button {
@@ -123,9 +147,12 @@
 .status-badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .status-badge.pending {
