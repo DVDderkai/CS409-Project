@@ -22,6 +22,7 @@ const NoteEditor = () => {
     if (!isNew) {
       fetchNote();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchNote = async () => {
