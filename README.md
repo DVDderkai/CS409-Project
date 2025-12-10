@@ -126,21 +126,6 @@ The application will run at http://localhost:3000
 ### Progress Tracking
 - `GET /api/progress` - Get study progress statistics
 
-## Team Roles
-
-Recommended team role assignments:
-- Frontend Developer
-- Backend Developer
-- UI/UX Designer
-- Database Administrator
-- Project Manager/Test Engineer
-
-## Development Timeline
-
-- **Proposal Submission**: October 16th
-- **Prototypes and Heuristic Evaluation**: November 11th (in class)
-- **Final Submission**: December 9th
-
 ## License
 
 This project is for CS409 course.
