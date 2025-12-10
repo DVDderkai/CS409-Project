@@ -149,7 +149,7 @@ const ReviewPlans = () => {
                 >
                   Cancel
                 </button>
-                <button type="submit" className="save-button">Create</button>
+                <button type="submit" className="create-submit-button">Create Review Plan</button>
               </div>
             </form>
           </div>
