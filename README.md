@@ -126,6 +126,15 @@ The application will run at http://localhost:3000
 ### Progress Tracking
 - `GET /api/progress` - Get study progress statistics
 
+## Team Information
+
+**Team Size**: 1 member (Individual Project)
+
+**Note**: This project was started late, and the proposal submission deadline (October 16th, 11:59PM) was missed. However, the project will continue with the remaining deliverables:
+
+- **Functional Prototypes and Heuristic Evaluation** - Due: November 11th (in class)
+- **Final Submission** - Due: December 9th, 11:59PM CT
+
 ## License
 
 This project is for CS409 course.
