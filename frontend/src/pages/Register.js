@@ -45,7 +45,18 @@ const Register = () => {
       setAuthToken(token, user);
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.error || 'Registration failed, please try again');
+      // Handle different error scenarios
+      if (err.response?.status === 400) {
+        setError(err.response?.data?.error || 'Registration failed. User may already exist.');
+      } else if (err.response?.status === 404) {
+        setError('Server endpoint not found. Please check backend configuration.');
+      } else if (err.response?.status) {
+        setError(err.response?.data?.error || 'Registration failed, please try again');
+      } else if (err.message === 'Network Error') {
+        setError('Cannot connect to server. Please check your connection.');
+      } else {
+        setError('Registration failed, please try again');
+      }
     } finally {
       setLoading(false);
     }

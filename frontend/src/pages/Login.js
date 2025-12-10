@@ -33,7 +33,18 @@ const Login = () => {
       setAuthToken(token, user);
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.error || 'Login failed, please try again');
+      // Handle different error scenarios
+      if (err.response?.status === 401) {
+        setError(err.response?.data?.error || 'Invalid email or password');
+      } else if (err.response?.status === 404) {
+        setError('Server endpoint not found. Please check backend configuration.');
+      } else if (err.response?.status) {
+        setError(err.response?.data?.error || 'Login failed, please try again');
+      } else if (err.message === 'Network Error') {
+        setError('Cannot connect to server. Please check your connection.');
+      } else {
+        setError('Login failed, please try again');
+      }
     } finally {
       setLoading(false);
     }

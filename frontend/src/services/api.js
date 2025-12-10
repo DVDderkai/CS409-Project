@@ -28,10 +28,23 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+    // Only redirect to login if it's NOT an auth endpoint and we get 401
+    // This prevents redirect loop on login/register pages
+    const isAuthEndpoint = error.config?.url?.includes('/register') || 
+                           error.config?.url?.includes('/login');
+    
+    if (error.response?.status === 401 && !isAuthEndpoint) {
+      // Only redirect if user is authenticated (has token)
+      // This means they're accessing a protected route but token expired
+      const token = localStorage.getItem('token');
+      if (token) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        // Use window.location for hard navigation in case router isn't available
+        if (!window.location.pathname.includes('/login')) {
+          window.location.href = '/login';
+        }
+      }
     }
     return Promise.reject(error);
   }
